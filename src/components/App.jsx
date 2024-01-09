@@ -4,7 +4,7 @@ import { Layout } from './Layout';
 
 const HomePage = lazy(() => import('pages/HomePage'));
 const MoviesPage = lazy(() => import('pages/MoviesPage'));
-// const MovieDetailsPage = lazy(() => import('pages/MovieDetailsPage'));
+const MovieDetailsPage = lazy(() => import('pages/MovieDetailsPage'));
 
 export const App = () => {
   return (
@@ -12,7 +12,7 @@ export const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="/movies" element={<MoviesPage />} />
-        {/* <Route path="/movies/:movieId" element={<MovieDetailsPage />}></Route> */}
+        <Route path="/movies/:movieId" element={<MovieDetailsPage />}></Route>
         <Route path="*" element={<HomePage />} />
       </Route>
     </Routes>

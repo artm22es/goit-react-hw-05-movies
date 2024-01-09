@@ -2,7 +2,7 @@ import { fetchTrends } from 'api';
 import { useEffect, useState } from 'react';
 import { Loader } from 'components/Loader/Loader';
 import { MovieList } from 'components/MovieList/MovieList';
-import { ErrorMessage } from 'components/MovieList/ErrorMessage';
+import { ErrorMessage } from 'components/ErrorMessage';
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);

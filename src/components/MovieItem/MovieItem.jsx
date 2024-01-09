@@ -8,7 +8,7 @@ export const MovieItem = ({ movie }) => {
     location.pathname.includes('movies') ? `${movie.id}` : `movies/${movie.id}`;
 
   return (
-    <Link to={getUrlPath()}>
+    <Link to={getUrlPath()} state={{ from: location }}>
       <img
         src={
           movie.poster_path
@@ -17,6 +17,7 @@ export const MovieItem = ({ movie }) => {
         }
         alt="poster"
       />
+      <h2>{movie.original_title ?? movie.original_name}</h2>
     </Link>
   );
 };
