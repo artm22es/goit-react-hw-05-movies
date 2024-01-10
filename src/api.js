@@ -11,5 +11,5 @@ export const fetchTrends = async () => {
 
 export const fetchMovieDetails = async id => {
   const res = await axios.get(`/movie/${id}?api_key=${API_KEY}`);
-  return res;
+  return res.data;
 };
