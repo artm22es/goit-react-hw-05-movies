@@ -1,25 +1,23 @@
 import { fetchTrends } from 'api';
-import { useEffect, useState } from 'react';
-import { Loader } from 'components/Loader/Loader';
 import { MovieList } from 'components/MovieList/MovieList';
-import { ErrorMessage } from 'components/ErrorMessage';
+import { useEffect, useState } from 'react';
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     async function getTrends() {
       try {
-        setIsLoading(true);
+        setLoading(true);
         setError(false);
-        const data = await fetchTrends();
-        setMovies(data.results);
+        const trends = await fetchTrends();
+        setMovies(trends.results);
       } catch (error) {
         setError(true);
       } finally {
-        setIsLoading(false);
+        setLoading(false);
       }
     }
     getTrends();
@@ -27,8 +25,8 @@ export default function HomePage() {
 
   return (
     <>
-      {isLoading && <Loader />}
-      {error && <ErrorMessage />}
+      {error && <p>Ooops, something went wrong...</p>}
+      {loading && <p>Loading page...</p>}
       <MovieList movies={movies} />
     </>
   );

@@ -1,30 +1,34 @@
 // import { fetchMovieDetails } from 'api';
-// import { useEffect, useRef, useState } from 'react';
-// import { useLocation, useParams } from 'react-router-dom';
+// import { useEffect, useState } from 'react';
+// import { useParams } from 'react-router-dom';
 
 export default function MovieDetailsPage() {
-  // const [movie, setMovie] = useState(null);
+  // const { movieId } = useParams();
+  // // const [movieDetails, setMovieDetails] = useState({});
+  // const [loading, setLoading] = useState(false);
   // const [error, setError] = useState(false);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const params = useParams();
-  // const location = useLocation();
-  // const backLink = useRef(location.state?.from ?? '/movies');
 
   // useEffect(() => {
-  //   async function getDetails() {
+  //   async function getMovieDetails() {
   //     try {
-  //       setIsLoading(true);
+  //       setLoading(true);
   //       setError(false);
-  //       const data = await fetchMovieDetails(params.movieId);
-  //       setMovie(data);
+  //       const data = await fetchMovieDetails(movieId);
+  //       setMovieDetails(data);
   //     } catch (error) {
   //       setError(true);
   //     } finally {
-  //       setIsLoading(false);
+  //       setLoading(false);
   //     }
   //   }
-  //   getDetails();
-  // }, [params.movieId]);
+  //   getMovieDetails();
+  // }, [movieId]);
 
-  return <div>Movie details page</div>;
+  // const { poster_path, vote_average, overview, genres, name } = movieDetails;
+  return (
+    <>
+      {/* {error && <p>Ooops, something went wrong...</p>}
+      {loading && <p>Loading page...</p>} */}
+    </>
+  );
 }
