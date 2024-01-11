@@ -1,27 +1,34 @@
 import { useLocation } from 'react-router-dom';
-import { StyledItem, StyledLink, StyledList } from './MovieList.styled';
+import {
+  MovieImg,
+  MovieItem,
+  MovieLink,
+  MovieListStyled,
+  MovieName,
+} from './MovieList.styled';
 
-export const MovieList = ({ movies }) => {
+export const MoviesList = ({ movies }) => {
   const location = useLocation();
 
+  const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
+  const defaultImg =
+    '<https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700>';
+
   return (
-    <StyledList>
-      {movies.map(({ title, name, id, poster_path, vote_average }) => {
+    <MovieListStyled>
+      {movies.map(({ id, title, name, poster_path }) => {
         return (
-          <StyledItem key={id}>
-            <StyledLink to={`/movies/${id}`} state={{ from: location }}>
-              <img
-                src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+          <MovieItem key={id}>
+            <MovieLink to={`/movies/${id}`} state={{ from: location }}>
+              <MovieImg
+                src={poster_path ? `${imgBaseUrl}/${poster_path}` : defaultImg}
                 alt="poster"
               />
-              <div>
-                <h3>{title || name}</h3>
-                <p>{vote_average.toFixed(1)}/10</p>
-              </div>
-            </StyledLink>
-          </StyledItem>
+              <MovieName>{title ?? name}</MovieName>
+            </MovieLink>
+          </MovieItem>
         );
       })}
-    </StyledList>
+    </MovieListStyled>
   );
 };

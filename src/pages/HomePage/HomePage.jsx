@@ -1,5 +1,8 @@
 import { fetchTrends } from 'api';
-import { MovieList } from 'components/MovieList/MovieList';
+import { ErrorMessage } from 'components/ErrorMessage';
+import { Loader } from 'components/Loader/Loader';
+import { MoviesList } from 'components/MovieList/MovieList';
+
 import { useEffect, useState } from 'react';
 
 export default function HomePage() {
@@ -25,9 +28,9 @@ export default function HomePage() {
 
   return (
     <>
-      {error && <p>Ooops, something went wrong...</p>}
-      {loading && <p>Loading page...</p>}
-      <MovieList movies={movies} />
+      {error && <ErrorMessage />}
+      {loading && <Loader />}
+      <MoviesList movies={movies} />
     </>
   );
 }
