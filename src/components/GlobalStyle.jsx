@@ -15,6 +15,8 @@ html,body {
 
   body {
     margin: 0;
+    background-color: #0d0d0d;
+    color: #F8F8FF;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -38,7 +40,8 @@ h2 {
   list-style: none;
 }
 
-  a, a:visited {
+  a {
     text-decoration: none;
-    color:inherit;
-  }`;
+    color: inherit;
+  }
+  `;

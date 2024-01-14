@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
+import { StyledLink } from './BackLink.styled';
 
 export const BackLink = ({ backLink }) => {
-  return <Link to={backLink.current}></Link>;
+  return <StyledLink to={backLink.current}>← Go back</StyledLink>;
 };

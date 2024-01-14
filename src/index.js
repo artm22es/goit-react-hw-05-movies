@@ -7,13 +7,7 @@ import { GlobalStyle } from 'components/GlobalStyle';
 
 const theme = {
   colors: {
-    textColor: '#F8F8FF',
-  },
-
-  shadows: {
-    mainShadow: '-2px -2px 5px #ffffff, 3px 3px 5px rgba(0, 0, 0, 0.1)',
-    insetShadow:
-      'inset -2px -2px 5px #ffffff, inset 3px 3px 5px rgba(0, 0, 0, 0.1)',
+    focusColor: '#ff0000',
   },
 
   spacing: value => `${value * 4}px`,
