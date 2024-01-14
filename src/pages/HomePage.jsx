@@ -1,7 +1,7 @@
 import { fetchTrends } from 'api';
 import { ErrorMessage } from 'components/ErrorMessage';
 import { Loader } from 'components/Loader/Loader';
-import { MoviesList } from 'components/MovieList/MovieList';
+import { MovieList } from 'components/MovieList/MovieList';
 
 import { useEffect, useState } from 'react';
 
@@ -16,7 +16,7 @@ export default function HomePage() {
         setLoading(true);
         setError(false);
         const trends = await fetchTrends();
-        setMovies(trends.results);
+        setMovies(trends);
       } catch (error) {
         setError(true);
       } finally {
@@ -30,7 +30,7 @@ export default function HomePage() {
     <>
       {error && <ErrorMessage />}
       {loading && <Loader />}
-      <MoviesList movies={movies} />
+      <MovieList movies={movies} />
     </>
   );
 }

@@ -2,19 +2,20 @@ import { fetchMovieCast } from 'api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-export const Cast = () => {
+export default function Cast() {
   const [cast, setCast] = useState([]);
   const { movieId } = useParams();
 
   useEffect(() => {
     const getCast = async () => {
       const data = await fetchMovieCast(movieId);
-      data.cast && setCast(data.cast);
+      setCast(data);
     };
     getCast();
   }, [movieId]);
 
   const defaultImg = 'https://picsum.photos/300/200';
+  const imgBaseUrl = 'https://image.tmdb.org/t/p/w200';
 
   return (
     <div>
@@ -25,9 +26,7 @@ export const Cast = () => {
               <li key={id}>
                 <img
                   src={
-                    profile_path
-                      ? `https://image.tmdb.org/t/p/w200/${profile_path}`
-                      : defaultImg
+                    profile_path ? `${imgBaseUrl}/${profile_path}` : defaultImg
                   }
                   alt="actor"
                 />
@@ -42,4 +41,4 @@ export const Cast = () => {
       )}
     </div>
   );
-};
+}

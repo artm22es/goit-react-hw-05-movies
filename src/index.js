@@ -7,10 +7,7 @@ import { GlobalStyle } from 'components/GlobalStyle';
 
 const theme = {
   colors: {
-    accent: '#6a9bd8',
-    overlay: 'rgba(40, 40, 40, 0.65)',
-    secondary: '#858585',
-    background: '#ebf5fc',
+    textColor: '#F8F8FF',
   },
 
   shadows: {

@@ -2,14 +2,14 @@ import { fetchMovieReviews } from 'api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-export const Reviews = () => {
+export default function Reviews() {
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
 
   useEffect(() => {
     const getReviews = async () => {
       const data = await fetchMovieReviews(movieId);
-      data.results && setReviews(data.results);
+      setReviews(data);
     };
     getReviews();
   }, [movieId]);
@@ -32,4 +32,4 @@ export const Reviews = () => {
       )}
     </div>
   );
-};
+}
