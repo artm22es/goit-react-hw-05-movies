@@ -1,4 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
+import { SearchBtn, StyledForm, StyledInput } from './MovieInput.styled';
 
 export const MovieInput = () => {
   const [, setParams] = useSearchParams();
@@ -11,9 +12,9 @@ export const MovieInput = () => {
   };
 
   return (
-    <form onSubmit={submitForm}>
-      <input name="movie" placeholder="Find your movie" />
-      <button type="submit">Search</button>
-    </form>
+    <StyledForm onSubmit={submitForm}>
+      <StyledInput name="movie" placeholder="Find your movie" />
+      <SearchBtn type="submit">Search</SearchBtn>
+    </StyledForm>
   );
 };

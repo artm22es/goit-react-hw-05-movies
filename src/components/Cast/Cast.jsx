@@ -1,6 +1,7 @@
 import { fetchMovieCast } from 'api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { CastContainer, CastItem, CastList, ErrorInfo } from './Cast.styled';
 
 export default function Cast() {
   const [cast, setCast] = useState([]);
@@ -14,16 +15,16 @@ export default function Cast() {
     getCast();
   }, [movieId]);
 
-  const defaultImg = 'https://picsum.photos/300/200';
+  const defaultImg = 'https://picsum.photos/150/225';
   const imgBaseUrl = 'https://image.tmdb.org/t/p/w200';
 
   return (
-    <div>
+    <CastContainer>
       {cast.length > 0 ? (
-        <ul>
+        <CastList>
           {cast.map(({ profile_path, name, character, id }) => {
             return (
-              <li key={id}>
+              <CastItem key={id}>
                 <img
                   src={
                     profile_path ? `${imgBaseUrl}/${profile_path}` : defaultImg
@@ -32,13 +33,15 @@ export default function Cast() {
                 />
                 <h3>{name}</h3>
                 <p>Role: {character}</p>
-              </li>
+              </CastItem>
             );
           })}
-        </ul>
+        </CastList>
       ) : (
-        <p>There is nothing to show</p>
+        <ErrorInfo>
+          Sorry, we didn't find any information for this movie
+        </ErrorInfo>
       )}
-    </div>
+    </CastContainer>
   );
 }

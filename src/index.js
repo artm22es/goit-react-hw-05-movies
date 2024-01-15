@@ -9,8 +9,6 @@ const theme = {
   colors: {
     focusColor: '#ff0000',
   },
-
-  spacing: value => `${value * 4}px`,
 };
 
 ReactDOM.createRoot(document.getElementById('root')).render(

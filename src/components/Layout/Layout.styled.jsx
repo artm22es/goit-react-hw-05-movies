@@ -9,24 +9,24 @@ export const Header = styled.header`
 
 export const Nav = styled.nav`
   display: flex;
-  gap: ${p => p.theme.spacing(5)};
+  gap: 20px;
 `;
 
 export const StyledNavLink = styled(NavLink)`
   font-weight: 400;
   font-size: 20px;
   text-transform: uppercase;
+  transition: color 200ms linear, text-decoration 200ms linear;
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: ${p => p.theme.colors.focusColor};
     text-decoration: underline;
     text-underline-offset: 5px;
+  }
 
-    &.active {
-      color: ${p => p.theme.colors.focusColor};
-      text-decoration: underline;
-      text-underline-offset: 5px;
-    }
+  &.active {
+    color: ${p => p.theme.colors.focusColor};
+    text-decoration: underline;
+    text-underline-offset: 5px;
   }
 `;

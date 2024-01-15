@@ -1,3 +1,11 @@
+import styled from 'styled-components';
+
+const ErrorStyled = styled.p`
+  padding: 20px;
+  color: ${p => p.theme.colors.focusColor};
+  font-size: 20px;
+`;
+
 export const ErrorMessage = () => {
-  return <p>Something went wrong, please reload this page</p>;
+  return <ErrorStyled>Something went wrong...</ErrorStyled>;
 };

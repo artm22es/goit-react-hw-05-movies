@@ -6,14 +6,14 @@ export const MovieListStyled = styled.ul`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: ${p => p.theme.spacing(10)};
+  gap: 40px;
 `;
 
 export const MovieLink = styled(Link)`
   display: inline-block;
   width: 100%;
   max-width: 200px;
-  transition: transform 200ms linear;
+  transition: transform 200ms linear, color 200ms linear;
 
    &:hover {
     transform: scale(105%);

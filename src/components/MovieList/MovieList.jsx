@@ -5,8 +5,7 @@ export const MovieList = ({ movies }) => {
   const location = useLocation();
 
   const imgBaseUrl = 'https://image.tmdb.org/t/p/w300';
-  const defaultImg =
-    '<https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700>';
+  const defaultImg = 'https://picsum.photos/200/300';
 
   return (
     <MovieListStyled>

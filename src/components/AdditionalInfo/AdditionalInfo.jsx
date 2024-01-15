@@ -1,17 +1,22 @@
-import { Link } from 'react-router-dom';
+import {
+  AddInfoContainer,
+  AddInfoLink,
+  AddInfoList,
+  AddInfoTitle,
+} from './AdditionalInfo.styled';
 
 export const AdditionalInfo = () => {
   return (
-    <>
-      <h3>Additional information</h3>
-      <ul>
+    <AddInfoContainer>
+      <AddInfoTitle>Additional information :</AddInfoTitle>
+      <AddInfoList>
         <li>
-          <Link to="cast">Cast</Link>
+          <AddInfoLink to="cast">Cast</AddInfoLink>
         </li>
         <li>
-          <Link to="reviews">Reviews</Link>
+          <AddInfoLink to="reviews">Reviews</AddInfoLink>
         </li>
-      </ul>
-    </>
+      </AddInfoList>
+    </AddInfoContainer>
   );
 };
